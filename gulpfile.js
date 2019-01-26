@@ -28,4 +28,20 @@ gulp.task('build:vendor', () => {
         .pipe(gulp.dest('static-root/build/vendor'));
 });
 
+gulp.task('watch:css', () => {
+    gulp.watch(
+        'static-root/demoproject/css/*.scss',
+        gulp.series('build:css')
+    );
+});
+
+gulp.task('watch:js', () => {
+    gulp.watch(
+        'static-root/demoproject/js/**/*.js',
+        gulp.series('build:js')
+    );
+});
+
 gulp.task('build', gulp.series('build:css', 'build:js', 'build:vendor'));
+
+gulp.task('watch', gulp.parallel('watch:css', 'watch:js'));

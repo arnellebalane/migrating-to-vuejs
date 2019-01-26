@@ -6,7 +6,8 @@
   "scripts": {
     "build:css": "gulp build:css",
     "build:js": "gulp build:js",
-    "build": "gulp build"
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "keywords": [],
   "author": "Arnelle Balane <arnellebalane@gmail.com> (https://arnellebalane.com/)",
