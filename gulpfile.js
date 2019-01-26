@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 
 gulp.task('build:css', () => {
     return gulp.src('static-root/demoproject/css/index.scss')
@@ -13,7 +13,7 @@ gulp.task('build:js', () => {
             'static-root/demoproject/js/index.js',
             'static-root/demoproject/js/require-config.js'
         ])
-        .pipe(uglify())
+        .pipe(terser())
         .pipe(gulp.dest('static-root/build/demoproject/js'));
 });
 
