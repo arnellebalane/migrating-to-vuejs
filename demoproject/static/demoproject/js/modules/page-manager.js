@@ -13,9 +13,11 @@ define(require => {
 
     const pageRoot = Zepto('#page-root');
 
-    function openPage({path, skipHistory}) {
-        if (!skipHistory) {
+    function openPage({path, history='push'}) {
+        if (history === 'push') {
             historyManager.pushState(path);
+        } else if (history === 'replace') {
+            historyManager.replaceState(path);
         }
 
         if (pages.hasOwnProperty(path)) {

@@ -5,12 +5,19 @@ define(require => {
         window.history.pushState({}, document.title, path);
     };
 
+    const replaceState = path => {
+        window.history.replaceState({}, document.title, path);
+    };
+
     window.addEventListener('popstate', e => {
         pubsub.publish('open-page', {
             path: window.location.pathname,
-            skipHistory: true
+            history: 'skip'
         });
     });
 
-    return {pushState};
+    return {
+        pushState,
+        replaceState
+    };
 });
