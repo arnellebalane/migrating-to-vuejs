@@ -10,12 +10,19 @@ define(require => {
 
     const pageRoot = Zepto('#page-root');
 
-    pubsub.subscribe('open-page', page => {
+    function openPage(page) {
         if (pages.hasOwnProperty(page)) {
             const rendered = Mustache.render(pages[page], {});
             pageRoot.html(rendered);
         } else {
             window.location.reload();
         }
+    }
+
+    pubsub.subscribe('open-page', openPage);
+
+    Zepto(document).on('click', 'a.open-page', e => {
+        e.preventDefault();
+        openPage(e.target.getAttribute('href'));
     });
 });
