@@ -12,15 +12,20 @@
     </head>
 
     <body>
-        <nav>
-            <h1>Demo Project</h1>
+        <header class="header">
+            <div class="header__content wrapper">
+                <a href="/" class="open-page">
+                    <h1 class="header__title">DemoProject</h1>
+                </a>
 
-            <a href="/page-1" class="open-page">Page 1</a>
-            <a href="/page-2" class="open-page">Page 2</a>
-            <a href="/page-3" class="open-page">Page 3</a>
-        </nav>
+                <nav class="nav">
+                    <a href="/gallery" class="nav__link open-page">Gallery</a>
+                    <a href="/video" class="nav__link open-page">Video</a>
+                </nav>
+            </div>
+        </header>
 
-        <div id="page-root"></div>
+        <div id="page-root" class="page"></div>
 
         <script src="{% static 'build/vendor/requirejs/require.js' %}"></script>
         <script src="{% static 'build/demoproject/js/require-config.js' %}"></script>

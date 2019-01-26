@@ -36,10 +36,10 @@ gulp.task('watch:css', () => {
 });
 
 gulp.task('watch:js', () => {
-    gulp.watch(
-        'static-root/demoproject/js/**/*.js',
-        gulp.series('build:js')
-    );
+    gulp.watch([
+        'static-root/demoproject/js/**/*.{js}',
+        'static-root/demoproject/mustache-templates/*.html'
+    ], gulp.series('build:js'));
 });
 
 gulp.task('build', gulp.series('build:css', 'build:js', 'build:vendor'));

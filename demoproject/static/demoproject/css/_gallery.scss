@@ -1,0 +1,13 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery__image:not(:first-child) {
+    width: calc((100% - 24px) / 2);
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+    margin-top: 24px;
+}
