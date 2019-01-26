@@ -6,7 +6,9 @@ define(require => {
 
     const pages = {
         '/': require('text!demoproject/mustache-templates/index.html'),
-        '/page-1': require('text!demoproject/mustache-templates/page-1.html')
+        '/page-1': require('text!demoproject/mustache-templates/page-1.html'),
+        '/page-2': require('text!demoproject/mustache-templates/page-2.html'),
+        '/page-3': require('text!demoproject/mustache-templates/page-3.html')
     };
 
     const pageRoot = Zepto('#page-root');
