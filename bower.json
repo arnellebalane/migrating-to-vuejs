@@ -1,0 +1,22 @@
+{
+  "name": "demoproject",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Arnelle Balane <arnellebalane@gmail.com> (https://arnellebalane.com/)"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.3.6",
+    "mustache.js": "mustache#^3.0.1",
+    "zepto": "^1.2.0"
+  }
+}
