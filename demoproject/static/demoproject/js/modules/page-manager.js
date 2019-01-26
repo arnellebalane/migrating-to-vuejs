@@ -2,6 +2,7 @@ define(require => {
     const Zepto = require('zepto');
     const Mustache = require('mustache');
     const pubsub = require('demoproject/js/modules/pubsub');
+    const historyManager = require('demoproject/js/modules/history-manager');
 
     const pages = {
         '/': require('text!demoproject/mustache-templates/index.html'),
@@ -10,9 +11,13 @@ define(require => {
 
     const pageRoot = Zepto('#page-root');
 
-    function openPage(page) {
-        if (pages.hasOwnProperty(page)) {
-            const rendered = Mustache.render(pages[page], {});
+    function openPage({path, skipHistory}) {
+        if (!skipHistory) {
+            historyManager.pushState(path);
+        }
+
+        if (pages.hasOwnProperty(path)) {
+            const rendered = Mustache.render(pages[path], {});
             pageRoot.html(rendered);
         } else {
             window.location.reload();
@@ -23,6 +28,8 @@ define(require => {
 
     Zepto(document).on('click', 'a.open-page', e => {
         e.preventDefault();
-        openPage(e.target.getAttribute('href'));
+        openPage({
+            path: e.target.getAttribute('href')
+        });
     });
 });
