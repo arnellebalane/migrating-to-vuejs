@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const optimize = require('gulp-requirejs-optimize');
 const terser = require('gulp-terser');
 
 gulp.task('build:css', () => {
@@ -12,9 +13,14 @@ gulp.task('build:js', () => {
     return gulp.src([
             'static-root/demoproject/js/index.js',
             'static-root/demoproject/js/require-config.js'
-        ])
+        ], {base: 'static-root'})
+        .pipe(optimize({
+            baseUrl: 'static-root',
+            mainConfigFile: 'static-root/demoproject/js/require-config.js',
+            optimize: 'none'
+        }))
         .pipe(terser())
-        .pipe(gulp.dest('static-root/build/demoproject/js'));
+        .pipe(gulp.dest('static-root/build'));
 });
 
 gulp.task('build:vendor', () => {
