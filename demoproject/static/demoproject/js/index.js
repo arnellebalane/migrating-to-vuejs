@@ -1,6 +1,7 @@
 require([
     'zepto',
+    'demoproject/js/modules/page-manager',
     'demoproject/js/modules/pubsub'
-], (Zepto, pubsub) => {
-    console.log(pubsub);
+], (Zepto, pageManager, pubsub) => {
+
 });
