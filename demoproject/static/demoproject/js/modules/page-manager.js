@@ -10,6 +10,17 @@ define(require => {
         '/video': require('demoproject/js/pages/video')
     };
 
+
+    pubsub.subscribe('open-page', openPage);
+
+    Zepto(document).on('click', 'a.open-page', function(e) {
+        e.preventDefault();
+        openPage({
+            path: $(this).attr('href')
+        });
+    });
+
+
     const pageRoot = Zepto('#page-root');
 
     function openPage({path, history='push'}) {
@@ -30,13 +41,4 @@ define(require => {
             window.location.reload();
         }
     }
-
-    pubsub.subscribe('open-page', openPage);
-
-    Zepto(document).on('click', 'a.open-page', function(e) {
-        e.preventDefault();
-        openPage({
-            path: $(this).attr('href')
-        });
-    });
 });
