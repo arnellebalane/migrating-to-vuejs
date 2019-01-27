@@ -5,5 +5,11 @@ require.config({
         zepto: 'vendor/zepto/zepto',
         mustache: 'vendor/mustache.js/mustache',
         text: 'vendor/text/text'
+    },
+
+    shim: {
+        zepto: {
+            exports: 'Zepto'
+        }
     }
 });

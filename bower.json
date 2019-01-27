@@ -17,7 +17,7 @@
   "dependencies": {
     "requirejs": "^2.3.6",
     "mustache.js": "mustache#^3.0.1",
-    "zepto": "^1.2.0",
+    "zepto": "1.1.6",
     "text": "requirejs-text#^2.0.15"
   }
 }
