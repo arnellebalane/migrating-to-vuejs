@@ -40,8 +40,8 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.video-player__overlay.playing::before,
-.video-player__overlay.playing::after {
+.video-player.playing .video-player__overlay::before,
+.video-player.playing .video-player__overlay::after {
     animation: grow 500ms ease-out forwards;
 }
 
@@ -63,7 +63,15 @@
     top: 0;
     left: 0;
     background-color: #ffeb3b;
-    transition: width 300ms ease;
+}
+
+.video-player__progress.animating {
+    animation: progress 5s linear forwards;
+    animation-play-state: paused;
+}
+
+.video-player.playing .video-player__progress.animating {
+    animation-play-state: running;
 }
 
 @keyframes grow {
@@ -75,5 +83,15 @@
     to {
         transform: translate(-50%, -50%) scale(2);
         opacity: 0;
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
     }
 }
