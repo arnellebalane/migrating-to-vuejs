@@ -19,7 +19,7 @@ gulp.task('build:js', () => {
             mainConfigFile: 'static-root/demoproject/js/require-config.js',
             optimize: 'none'
         }))
-        .pipe(terser())
+        // .pipe(terser())
         .pipe(gulp.dest('static-root/build'));
 });
 
