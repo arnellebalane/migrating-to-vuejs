@@ -24,13 +24,13 @@ define(require => {
     const pageRoot = Zepto('#page-root');
 
     function openPage({path, history='push'}) {
-        if (history === 'push') {
-            historyManager.pushState(path);
-        } else if (history === 'replace') {
-            historyManager.replaceState(path);
-        }
-
         if (pages.hasOwnProperty(path)) {
+            if (history === 'push') {
+                historyManager.pushState(path);
+            } else if (history === 'replace') {
+                historyManager.replaceState(path);
+            }
+
             const page = pages[path];
 
             const rendered = Mustache.render(page.template, {});
@@ -38,7 +38,7 @@ define(require => {
 
             page.execute();
         } else {
-            window.location.reload();
+            window.location.pathname = path;
         }
     }
 });
