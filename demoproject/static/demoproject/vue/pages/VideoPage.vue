@@ -2,7 +2,7 @@
     <div class="wrapper">
         <h1>Video Page</h1>
 
-        <VideoPlayer />
+        <VideoPlayer :playing="true" />
     </div>
 </template>
 
