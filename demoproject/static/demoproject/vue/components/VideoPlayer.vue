@@ -9,6 +9,12 @@
 
 <script>
 import VideoPlayer from 'js/components/video-player';
+
+export default {
+    mounted() {
+        new VideoPlayer(this.$el);
+    }
+};
 </script>
 
 <style lang="scss" scoped src="css/_player.scss"></style>
