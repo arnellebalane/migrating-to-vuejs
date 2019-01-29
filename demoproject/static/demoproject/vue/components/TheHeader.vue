@@ -9,11 +9,21 @@
                 <router-link to="/image">Image</router-link>
                 <router-link to="/gallery">Gallery</router-link>
                 <router-link to="/video">Video</router-link>
-                <a href="#">Popup</a>
+                <a href="#" @click.prevent="openPopup">Popup</a>
             </nav>
         </div>
     </header>
 </template>
+
+<script>
+export default {
+    methods: {
+        openPopup() {
+            this.$store.commit('setIsPopupOpen', true);
+        }
+    }
+};
+</script>
 
 <style lang="scss" scoped>
 .header {
