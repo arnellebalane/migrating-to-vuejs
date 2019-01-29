@@ -23,6 +23,13 @@ export default {
         }]
     },
 
+    resolve: {
+        alias: {
+            css: path.resolve(__dirname, 'static-root/demoproject/css'),
+            js: path.resolve(__dirname, 'static-root/demoproject/js')
+        }
+    },
+
     plugins: [
         new VueLoaderPlugin()
     ]
