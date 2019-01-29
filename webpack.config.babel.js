@@ -20,6 +20,12 @@ export default {
         }, {
             test: /\.scss$/,
             use: ['style-loader', 'css-loader', 'sass-loader']
+        }, {
+            test: /zepto\.js$/,
+            loader: 'exports-loader',
+            query: {
+                Zepto: true
+            }
         }]
     },
 
