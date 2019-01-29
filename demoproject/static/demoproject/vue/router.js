@@ -5,5 +5,9 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
     mode: 'history',
-    routes: []
+
+    routes: [{
+        path: '/gallery',
+        component: () => import('./pages/GalleryPage.vue')
+    }]
 });
