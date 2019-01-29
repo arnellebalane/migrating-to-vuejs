@@ -2,9 +2,19 @@
     <div class="wrapper">
         <h1>Video Page</h1>
 
-        <div id="video-container"></div>
+        <VideoPlayer />
     </div>
 </template>
+
+<script>
+import VideoPlayer from '../components/VideoPlayer.vue';
+
+export default {
+    components: {
+        VideoPlayer
+    }
+};
+</script>
 
 <style lang="scss" scoped>
 .wrapper {
