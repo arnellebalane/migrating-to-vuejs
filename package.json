@@ -6,8 +6,11 @@
   "scripts": {
     "build:css": "gulp build:css",
     "build:js": "gulp build:js",
-    "build": "gulp build",
-    "watch": "gulp watch"
+    "build:legacy": "gulp build",
+    "build:vue": "webpack",
+    "build": "npm run build:legacy && npm run build:vue",
+    "watch": "gulp watch",
+    "watch:vue": "webpack --watch"
   },
   "keywords": [],
   "author": "Arnelle Balane <arnellebalane@gmail.com> (https://arnellebalane.com/)",
