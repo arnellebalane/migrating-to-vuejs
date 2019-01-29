@@ -10,6 +10,12 @@ Vue.component('router-link', {
     render(h) {
         const href = typeof this.to === 'string' ? this.to : this.to.path;
         const data = {
+            on: {
+                click: e => {
+                    e.preventDefault();
+                    this.$root.$emit('navigate', href);
+                }
+            },
             attrs: {
                 href
             }
