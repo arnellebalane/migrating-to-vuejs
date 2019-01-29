@@ -2,7 +2,7 @@
     <div>
         <TheHeader />
         <router-view></router-view>
-        <ThePopup />
+        <ThePopup v-if="$store.state.isPopupOpen" />
     </div>
 </template>
 
