@@ -1,5 +1,5 @@
 <template>
-    <div id="popup-container" class="popup-container">
+    <div class="popup-container" @click="closePopup">
         <div class="popup">
             <h2>I am a popup!</h2>
 
@@ -11,6 +11,18 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        closePopup(e) {
+            if (!e.target.closest('.popup')) {
+                this.$store.commit('setIsPopupOpen', false);
+            }
+        }
+    }
+};
+</script>
 
 <style lang="scss" scoped>
 .popup-container {
