@@ -1,14 +1,14 @@
 <template>
     <header class="header">
         <div class="wrapper">
-            <a href="/">
+            <router-link to="/">
                 <h1>DemoProject</h1>
-            </a>
+            </router-link>
 
             <nav>
-                <a href="/image">Image</a>
-                <a href="/gallery">Gallery</a>
-                <a href="/video">Video</a>
+                <router-link to="/image">Image</router-link>
+                <router-link to="/gallery">Gallery</router-link>
+                <router-link to="/video">Video</router-link>
                 <a href="#">Popup</a>
             </nav>
         </div>
