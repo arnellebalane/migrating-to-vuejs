@@ -26,5 +26,10 @@ Vue.component('router-link', {
 
 export default new Vue({
     store,
-    render: h => h(TheHeader)
+    render: h => h(TheHeader),
+
+    mounted() {
+        this.$el.querySelector('nav a:last-child')
+            .addEventListener('click', () => this.$emit('open-popup'));
+    }
 });
