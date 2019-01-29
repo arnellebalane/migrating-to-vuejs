@@ -7,7 +7,6 @@ define(require => {
     const pages = {
         '/': require('demoproject/js/pages/home'),
         '/image': require('demoproject/js/pages/image'),
-        '/gallery': require('demoproject/js/pages/gallery'),
         '/video': require('demoproject/js/pages/video')
     };
 
