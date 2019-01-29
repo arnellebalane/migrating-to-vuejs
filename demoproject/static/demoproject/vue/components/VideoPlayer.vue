@@ -7,4 +7,8 @@
     </div>
 </template>
 
+<script>
+import VideoPlayer from 'js/components/video-player';
+</script>
+
 <style lang="scss" scoped src="css/_player.scss"></style>
