@@ -8,9 +8,11 @@
     "build:js": "gulp build:js",
     "build:legacy": "gulp build",
     "build:vue": "webpack --config webpack/build.babel.js",
-    "build": "npm run build:legacy && npm run build:vue",
+    "build:vue:require": "webpack --config webpack/require.babel.js",
+    "build": "npm run build:vue:require && npm run build:legacy && npm run build:vue",
     "watch": "gulp watch",
-    "watch:vue": "webpack --config webpack/build.babel.js --watch"
+    "watch:vue": "webpack --config webpack/build.babel.js --watch",
+    "watch:vue:require": "webpack --config webpack/require.babel.js --watch"
   },
   "keywords": [],
   "author": "Arnelle Balane <arnellebalane@gmail.com> (https://arnellebalane.com/)",
