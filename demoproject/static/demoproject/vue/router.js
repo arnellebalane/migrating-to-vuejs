@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-export default new VueRouter({
+const router = new VueRouter({
     mode: 'history',
 
     routes: [{
@@ -11,3 +11,11 @@ export default new VueRouter({
         component: () => import('./pages/GalleryPage.vue')
     }]
 });
+
+router.afterEach(to => {
+    if (to.matched.length === 0) {
+        window.location.reload();
+    }
+});
+
+export default router;
