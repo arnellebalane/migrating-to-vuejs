@@ -11,8 +11,26 @@
 import VideoPlayer from 'js/components/video-player';
 
 export default {
+    props: {
+        playing: Boolean
+    },
+
+    watch: {
+        playing(value) {
+            if (value) {
+                this.player.play();
+            } else {
+                this.player.pause();
+            }
+        }
+    },
+
     mounted() {
-        new VideoPlayer(this.$el);
+        this.player = new VideoPlayer(this.$el);
+
+        if (this.playing) {
+            this.player.play();
+        }
     }
 };
 </script>
