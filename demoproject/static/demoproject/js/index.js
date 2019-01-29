@@ -12,13 +12,10 @@ require([
         pubsub.publish('open-page', {path});
     });
 
+    TheHeader.$on('open-popup', () => popup.open());
+
     pubsub.publish('open-page', {
         path: window.location.pathname,
         history: 'replace'
-    });
-
-    Zepto('.open-popup').on('click', e => {
-        e.preventDefault();
-        popup.open();
     });
 });
