@@ -26,7 +26,10 @@ export default {
     resolve: {
         alias: {
             css: path.resolve(__dirname, 'static-root/demoproject/css'),
-            js: path.resolve(__dirname, 'static-root/demoproject/js')
+            js: path.resolve(__dirname, 'static-root/demoproject/js'),
+
+            // Aliases for third-party dependencies
+            zepto: path.resolve(__dirname, 'static-root/vendor/zepto/zepto.js')
         }
     },
 
