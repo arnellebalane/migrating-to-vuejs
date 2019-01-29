@@ -9,6 +9,9 @@ const router = new VueRouter({
     routes: [{
         path: '/gallery',
         component: () => import('./pages/GalleryPage.vue')
+    }, {
+        path: '/video',
+        component: () => import('./pages/VideoPage.vue')
     }]
 });
 
