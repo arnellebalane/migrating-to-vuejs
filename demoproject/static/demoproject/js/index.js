@@ -6,7 +6,7 @@ require([
     'build/demoproject/vue/amd-adapters/TheHeader'
 ], (Zepto, pageManager, pubsub, popup, TheHeader) => {
 
-    console.log(TheHeader);
+    TheHeader.$mount('#header-container');
 
     pubsub.publish('open-page', {
         path: window.location.pathname,
